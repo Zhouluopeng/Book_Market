@@ -7,7 +7,7 @@
 import java.util.ArrayList;
 
 public class ShoppingCart {
-    private final ArrayList<Book> books = new ArrayList<>();
+    private final ArrayList<Book> books = new ArrayList<>();//책 목록
 
     public void addItem(Book book) {//책 추가
         books.add(book);

@@ -21,8 +21,8 @@ public class BookMarket {
 
     public static void start() {//시작
         initBooks(books);//책 목록 초기화
-        Welcome();
-        shoppingMenu();
+        Welcome();//환영 인터페이스
+        shoppingMenu();//메뉴
     }
 
 
@@ -45,7 +45,7 @@ public class BookMarket {
             System.out.println("Please choose");
             Scanner sc = new Scanner(System.in);//입력
             int n = sc.nextInt();
-            if (n < 1 || n > 7) {
+            if (n < 1 || n > 7) {//메뉴 범위
                 System.out.println("Wrong choice, please choose again");
             } else {
                 switch (n) {//메뉴 선택
@@ -59,7 +59,6 @@ public class BookMarket {
                 }
             }
         } while (true);
-
     }
 
     public static void initBooks(ArrayList<Book> books) {//책 목록 초기화
@@ -96,16 +95,16 @@ public class BookMarket {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the ISBN of the book you want to add:");
         String isbn = scanner.next();
-        boolean bookFound = false;
+        boolean bookFound = false;//책이 있는지 없는지
         for (Book book : books) {
-            if (book.getISBN().equalsIgnoreCase(isbn)) {
+            if (book.getISBN().equalsIgnoreCase(isbn)) {//책이 있을 때
                 cart.addItem(book);
                 bookFound = true;
                 System.out.println("Added " + book.getName() + " to cart.");
                 break;
             }
         }
-        if (!bookFound) {
+        if (!bookFound) {//책이 없을 때
             System.out.println("Book not found.");
         }
     }
@@ -114,16 +113,16 @@ public class BookMarket {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the ISBN of the book you want to remove:");
         String isbn = scanner.next();
-        boolean bookFound = false;
+        boolean bookFound = false;//책이 있는지 없는지
         for (Book book : books) {
-            if (book.getISBN().equalsIgnoreCase(isbn)) {
+            if (book.getISBN().equalsIgnoreCase(isbn)) {//책이 있을 때
                 cart.removeItem(book);
                 bookFound = true;
                 System.out.println("Removed " + book.getName() + " from cart.");
                 break;
             }
         }
-        if (!bookFound) {
+        if (!bookFound) {//책이 없을 때
             System.out.println("Book not found.");
         }
     }
@@ -136,7 +135,7 @@ public class BookMarket {
     }
 
 
-    public static void menuExit() {//종료 인터페이스 메소드
+    public static void menuExit() {//종료  메소드
         while (true) {
             System.out.println("Are you sure you want to exit? (Y/N)");
             Scanner sc = new Scanner(System.in);

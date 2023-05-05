@@ -29,7 +29,7 @@ public class Book {
     }
 
     @Override
-    public String toString() {
+    public String toString() {//책 정보
         return "Book{" +
                 "ISBN='" + ISBN + '\'' +
                 ", name='" + name + '\'' +
